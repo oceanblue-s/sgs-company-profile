@@ -1902,3 +1902,56 @@ h2{font-size:clamp(38px,4.5vw,58px);letter-spacing:-.025em}
         white-space: nowrap;
     }
 }
+
+/* Logo dan tulisan SGS */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 55px;
+    height: auto;
+}
+
+.brand span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand strong {
+    font-size: 28px; /* BESAR tulisan SGS */
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand small {
+    margin-top: 8px;
+    font-size: 11px; /* tulisan SENTRA... */
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .brand {
+        gap: 12px;
+    }
+
+    .brand img {
+        width: 65px;
+    }
+
+    .brand strong {
+        font-size: 30px;
+    }
+
+    .brand small {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        margin-top: 8px;
+    }
+}
