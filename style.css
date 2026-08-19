@@ -1466,3 +1466,286 @@ h2{font-size:clamp(38px,4.5vw,58px);letter-spacing:-.025em}
 
     transform: translate(-50%, -50%);
 }
+
+/* =========================================
+   NETWORK / INTEGRASI TOPOLOGI
+   RESPONSIVE MOBILE
+========================================= */
+
+.network-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.network-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 650px;
+    margin: 0 auto;
+}
+
+/* Titik tengah */
+.network-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    z-index: 5;
+}
+
+.network-center::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 1px solid #ed1c24;
+    border-radius: 50%;
+}
+
+.network-center img {
+    position: relative;
+    z-index: 2;
+    max-width: 110px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+/* Item network */
+.network-item {
+    position: absolute;
+    width: 220px;
+    text-align: center;
+    z-index: 3;
+}
+
+.network-item img {
+    width: 120px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.network-item h4,
+.network-item span,
+.network-item p {
+    display: block;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Posisi desktop */
+.network-item.item-1 {
+    top: 30px;
+    left: 5%;
+}
+
+.network-item.item-2 {
+    top: 30px;
+    right: 5%;
+}
+
+.network-item.item-3 {
+    top: 42%;
+    left: 0;
+}
+
+.network-item.item-4 {
+    top: 42%;
+    right: 0;
+}
+
+.network-item.item-5 {
+    bottom: 30px;
+    left: 5%;
+}
+
+.network-item.item-6 {
+    bottom: 30px;
+    right: 5%;
+}
+
+
+/* Garis */
+.network-line {
+    position: absolute;
+    background: #ddd;
+    z-index: 1;
+}
+
+.network-line.horizontal {
+    width: 40%;
+    height: 1px;
+    left: 30%;
+    top: 50%;
+}
+
+.network-line.vertical {
+    width: 1px;
+    height: 40%;
+    left: 50%;
+    top: 30%;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .network-section {
+        padding: 50px 15px !important;
+        overflow: hidden;
+    }
+
+    .network-container {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Tengah dipindahkan ke atas */
+    .network-center {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+
+        width: 150px;
+        height: 150px;
+
+        margin: 20px auto 45px;
+        flex-shrink: 0;
+    }
+
+    .network-center::before {
+        width: 132px;
+        height: 132px;
+    }
+
+    .network-center img {
+        max-width: 90px;
+        max-height: 80px;
+    }
+
+
+    /* Semua item menjadi normal flow */
+    .network-item {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        width: 100%;
+        max-width: 320px;
+
+        margin: 0 auto 45px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .network-item img {
+        width: 100px;
+        height: 80px;
+        margin-bottom: 12px;
+    }
+
+    .network-item h4,
+    .network-item span,
+    .network-item p {
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+
+    /* Hilangkan garis desktop */
+    .network-line {
+        display: none !important;
+    }
+
+
+    /* Urutan mobile */
+    .network-item.item-1 {
+        order: 1;
+    }
+
+    .network-item.item-2 {
+        order: 2;
+    }
+
+    .network-item.item-3 {
+        order: 3;
+    }
+
+    .network-item.item-4 {
+        order: 4;
+    }
+
+    .network-item.item-5 {
+        order: 5;
+    }
+
+    .network-item.item-6 {
+        order: 6;
+    }
+}
+
+
+/* HP kecil */
+@media (max-width: 480px) {
+
+    .network-section {
+        padding: 40px 12px !important;
+    }
+
+    .network-center {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 40px;
+    }
+
+    .network-center::before {
+        width: 114px;
+        height: 114px;
+    }
+
+    .network-center img {
+        max-width: 78px;
+        max-height: 70px;
+    }
+
+    .network-item {
+        max-width: 280px;
+        margin-bottom: 40px;
+    }
+
+    .network-item img {
+        width: 85px;
+        height: 70px;
+    }
+
+    .network-item h4,
+    .network-item span,
+    .network-item p {
+        font-size: 11px;
+    }
+}
