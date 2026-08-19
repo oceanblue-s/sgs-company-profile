@@ -1467,285 +1467,376 @@ h2{font-size:clamp(38px,4.5vw,58px);letter-spacing:-.025em}
     transform: translate(-50%, -50%);
 }
 
-/* =========================================
-   NETWORK / INTEGRASI TOPOLOGI
-   RESPONSIVE MOBILE
-========================================= */
-
-.network-section {
-    width: 100%;
-    overflow: hidden;
-}
-
-.network-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    min-height: 650px;
-    margin: 0 auto;
-}
-
-/* Titik tengah */
-.network-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    z-index: 5;
-}
-
-.network-center::before {
-    content: "";
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    border: 1px solid #ed1c24;
-    border-radius: 50%;
-}
-
-.network-center img {
-    position: relative;
-    z-index: 2;
-    max-width: 110px;
-    max-height: 100px;
-    object-fit: contain;
-}
-
-/* Item network */
-.network-item {
-    position: absolute;
-    width: 220px;
-    text-align: center;
-    z-index: 3;
-}
-
-.network-item img {
-    width: 120px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.network-item h4,
-.network-item span,
-.network-item p {
-    display: block;
-    margin: 0;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-/* Posisi desktop */
-.network-item.item-1 {
-    top: 30px;
-    left: 5%;
-}
-
-.network-item.item-2 {
-    top: 30px;
-    right: 5%;
-}
-
-.network-item.item-3 {
-    top: 42%;
-    left: 0;
-}
-
-.network-item.item-4 {
-    top: 42%;
-    right: 0;
-}
-
-.network-item.item-5 {
-    bottom: 30px;
-    left: 5%;
-}
-
-.network-item.item-6 {
-    bottom: 30px;
-    right: 5%;
-}
-
-
-/* Garis */
-.network-line {
-    position: absolute;
-    background: #ddd;
-    z-index: 1;
-}
-
-.network-line.horizontal {
-    width: 40%;
-    height: 1px;
-    left: 30%;
-    top: 50%;
-}
-
-.network-line.vertical {
-    width: 1px;
-    height: 40%;
-    left: 50%;
-    top: 30%;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
+/* =========================================================
+   NETWORK TOPOLOGY - MOBILE RESPONSIVE
+========================================================= */
 
 @media (max-width: 767px) {
 
-    .network-section {
-        padding: 50px 15px !important;
+    /* SECTION */
+    .network-topology {
+        width: 100%;
+        padding: 55px 15px 70px !important;
         overflow: hidden;
+        background: #fff;
     }
 
-    .network-container {
+    .network-topology .container {
         width: 100%;
-        min-height: auto;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        max-width: 100%;
+        padding: 0;
     }
 
-    /* Tengah dipindahkan ke atas */
-    .network-center {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-
-        width: 150px;
-        height: 150px;
-
-        margin: 20px auto 45px;
-        flex-shrink: 0;
-    }
-
-    .network-center::before {
-        width: 132px;
-        height: 132px;
-    }
-
-    .network-center img {
-        max-width: 90px;
-        max-height: 80px;
-    }
-
-
-    /* Semua item menjadi normal flow */
-    .network-item {
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        left: auto !important;
-
-        width: 100%;
-        max-width: 320px;
-
-        margin: 0 auto 45px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .network-item img {
-        width: 100px;
-        height: 80px;
-        margin-bottom: 12px;
-    }
-
-    .network-item h4,
-    .network-item span,
-    .network-item p {
-        font-size: 12px;
-        line-height: 1.5;
+    /* TITLE */
+    .network-heading {
         text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .network-heading span {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+    }
+
+    .network-heading h2 {
+        font-size: 28px;
+        line-height: 1.1;
+        margin: 0;
     }
 
 
-    /* Hilangkan garis desktop */
-    .network-line {
+    /* =====================================================
+       TOPOLOGY WRAPPER
+    ===================================================== */
+
+    .topology-wrapper {
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+
+        grid-template-areas:
+            "top-left top-right"
+            "center center"
+            "middle-left middle-right"
+            "bottom-left bottom-right";
+
+        gap: 35px 12px !important;
+
+        padding: 0 !important;
+        margin: 0 auto !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* =====================================================
+       HILANGKAN GARIS DESKTOP
+    ===================================================== */
+
+    .topology-line {
         display: none !important;
     }
 
 
-    /* Urutan mobile */
-    .network-item.item-1 {
-        order: 1;
+    /* =====================================================
+       ITEM
+    ===================================================== */
+
+    .topology-item {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+
+        width: 100% !important;
+        max-width: 170px !important;
+
+        height: auto !important;
+
+        margin: 0 auto !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        text-align: center !important;
+
+        z-index: 2;
     }
 
-    .network-item.item-2 {
-        order: 2;
+
+    /* POSISI ITEM */
+
+    .topology-item-1 {
+        grid-area: top-left;
     }
 
-    .network-item.item-3 {
-        order: 3;
+    .topology-item-2 {
+        grid-area: top-right;
     }
 
-    .network-item.item-4 {
-        order: 4;
+    .topology-item-3 {
+        grid-area: middle-left;
     }
 
-    .network-item.item-5 {
-        order: 5;
+    .topology-item-4 {
+        grid-area: middle-right;
     }
 
-    .network-item.item-6 {
-        order: 6;
+    .topology-item-5 {
+        grid-area: bottom-left;
     }
-}
 
-
-/* HP kecil */
-@media (max-width: 480px) {
-
-    .network-section {
-        padding: 40px 12px !important;
+    .topology-item-6 {
+        grid-area: bottom-right;
     }
+
+
+    /* =====================================================
+       LOGO
+    ===================================================== */
+
+    .topology-logo {
+        width: 145px !important;
+        height: 115px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 auto 12px !important;
+
+        overflow: hidden;
+    }
+
+    .topology-logo img {
+        position: relative !important;
+
+        width: auto !important;
+        height: auto !important;
+
+        max-width: 140px !important;
+        max-height: 105px !important;
+
+        object-fit: contain !important;
+
+        margin: 0 auto !important;
+
+        display: block !important;
+
+        transform: none !important;
+    }
+
+
+    /* =====================================================
+       NAMA NODE
+    ===================================================== */
+
+    .topology-item strong {
+        display: block;
+
+        width: 100%;
+
+        font-size: 10px;
+        line-height: 1.4;
+
+        font-weight: 700;
+
+        text-transform: uppercase;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       SGS CENTER
+    ===================================================== */
+
+    .topology-center {
+        grid-area: center;
+
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+
+        width: 245px !important;
+        height: 245px !important;
+
+        margin: 10px auto 15px !important;
+
+        border-radius: 50%;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        background: #fff;
+
+        border: 1px solid #ddd;
+
+        z-index: 10;
+    }
+
+
+    /* LINGKARAN SGS */
+
+    .topology-center::before {
+        content: "";
+
+        position: absolute;
+
+        width: 205px;
+        height: 205px;
+
+        border-radius: 50%;
+
+        border: 1px solid #e51c2a;
+    }
+
+
+    .topology-center::after {
+        content: "";
+
+        position: absolute;
+
+        width: 175px;
+        height: 175px;
+
+        border-radius: 50%;
+
+        border: 1px solid #e51c2a;
+    }
+
+
+    /* LOGO SGS */
 
     .network-center {
-        width: 130px;
-        height: 130px;
-        margin-bottom: 40px;
-    }
+        position: relative;
 
-    .network-center::before {
-        width: 114px;
-        height: 114px;
+        width: 135px !important;
+        height: 135px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        z-index: 20;
     }
 
     .network-center img {
-        max-width: 78px;
-        max-height: 70px;
+        width: 110px !important;
+        height: auto !important;
+
+        max-width: 110px !important;
+        max-height: 110px !important;
+
+        object-fit: contain !important;
+
+        display: block !important;
+
+        margin: 0 !important;
     }
 
-    .network-item {
-        max-width: 280px;
-        margin-bottom: 40px;
+
+    /* =====================================================
+       GARIS VERTIKAL ANTAR BAGIAN
+    ===================================================== */
+
+    .topology-center {
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
     }
 
-    .network-item img {
-        width: 85px;
-        height: 70px;
+
+    /* =====================================================
+       HILANGKAN EFEK POSISI LAMA
+    ===================================================== */
+
+    .topology-item,
+    .topology-center,
+    .topology-logo,
+    .network-center {
+        float: none !important;
+        clear: both !important;
     }
 
-    .network-item h4,
-    .network-item span,
-    .network-item p {
-        font-size: 11px;
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONE
+   320 - 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .network-topology {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .network-heading h2 {
+        font-size: 24px;
+    }
+
+    .topology-wrapper {
+        gap: 25px 5px !important;
+    }
+
+    .topology-item {
+        max-width: 145px !important;
+    }
+
+    .topology-logo {
+        width: 125px !important;
+        height: 100px !important;
+    }
+
+    .topology-logo img {
+        max-width: 120px !important;
+        max-height: 90px !important;
+    }
+
+    .topology-center {
+        width: 215px !important;
+        height: 215px !important;
+    }
+
+    .topology-center::before {
+        width: 180px;
+        height: 180px;
+    }
+
+    .topology-center::after {
+        width: 155px;
+        height: 155px;
+    }
+
+    .network-center img {
+        width: 90px !important;
+        max-width: 90px !important;
+    }
+
+    .topology-item strong {
+        font-size: 9px;
     }
 }
