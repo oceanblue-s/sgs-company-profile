@@ -1,140 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Klien — SGS | PT. Sentra Garuda Cakra Pratama</title>
-<meta name="description" content="PT. Sentra Garuda Cakra Pratama (SGS) telah dipercaya untuk mengelola keamanan di berbagai bidang usaha baik swasta maupun BUMN di Indonesia.">
-<meta property="og:title" content="Klien — SGS | PT. Sentra Garuda Cakra Pratama">
-<meta property="og:description" content="SGS hadir sebagai mitra keamanan untuk berbagai sektor usaha dan organisasi.">
-<meta property="og:type" content="website">
-<link rel="icon" href="assets/images/logo.png" type="image/png">
-<link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Klien | SGS Security & Office Boy</title>
+
+  <meta
+    name="description"
+    content="Sektor klien dan coverage layanan SGS untuk perbankan, mining, hospital, mall, factory, school, industrial, dan warehouse."
+  >
+
+  <meta property="og:title" content="Klien | SGS Security & Office Boy">
+  <meta
+    property="og:description"
+    content="SGS sebagai mitra layanan keamanan dan operasional profesional di berbagai sektor industri."
+  >
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="container">
-    <a href="index.html" class="nav-brand">
-    <img src="assets/images/logo.png" 
-         alt="Logo PT. Sentra Garuda Cakra Pratama">
+  <!-- ================= HEADER ================= -->
+  <header class="navbar">
 
-    <span class="brand-text">
-        <strong>SGS</strong>
-        <small>SENTRA GARUDA CAKRA PRATAMA</small>
-    </span>
-</a>
-    <nav class="nav-links">
+    <div class="container nav-inner">
+
+      <a class="brand" href="index.html" aria-label="SGS Beranda">
+        <img src="assets/images/logo.png" alt="Logo SGS">
+
+        <span>
+          <strong>SGS</strong>
+          <small>SENTRA GARUDA CAKRA PRATAMA</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="index.html">BERANDA</a>
+        <a href="tentang.html">TENTANG KAMI</a>
+        <a href="layanan.html">LAYANAN</a>
+        <a href="klien.html" class="active">KLIEN</a>
+        <a href="kontak.html">KONTAK</a>
+      </nav>
+
+      <a
+        class="btn-wa nav-wa"
+        href="https://wa.me/6282211227088"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp
+      </a>
+
+      <button
+        class="menu-toggle"
+        aria-label="Buka menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <nav class="mobile-drawer" aria-label="Navigasi mobile">
       <a href="index.html">Beranda</a>
-      <a href="tentang-kami.html">Tentang Kami</a>
+      <a href="tentang.html">Tentang Kami</a>
       <a href="layanan.html">Layanan</a>
       <a href="klien.html">Klien</a>
-      <a href="kontak.html">Hubungi Kami</a>
+      <a href="sistem-kinerja.html">Sistem Kinerja</a>
+      <a href="kontak.html">Kontak</a>
+
+      <a
+        class="btn-wa"
+        href="https://wa.me/6282211227088"
+        target="_blank"
+        rel="noopener"
+      >
+        Hubungi via WhatsApp
+      </a>
     </nav>
-    <div class="nav-cta">
-      <a href="kontak.html" class="btn btn-outline">Hubungi Kami</a>
-    </div>
-    <button class="nav-toggle" aria-label="Buka menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
 
-<nav class="mobile-nav">
-  <a href="index.html">Beranda</a>
-  <a href="tentang-kami.html">Tentang Kami</a>
-  <a href="layanan.html">Layanan</a>
-  <a href="klien.html">Klien</a>
-  <a href="kontak.html">Hubungi Kami</a>
-  <a href="kontak.html" class="btn btn-gold">Hubungi Kami</a>
-</nav>
+  </header>
 
-<section class="page-header">
-  <div class="container">
-    <div class="crumb">Beranda <span>/</span> Klien</div>
-    <h1>Mitra Jasa Terpercaya</h1>
-    <p>SGS hadir sebagai mitra keamanan untuk berbagai sektor usaha dan organisasi.</p>
-  </div>
-</section>
 
-<!-- ============ KLIEN ============ -->
-<section class="clients container">
-  <div data-reveal style="max-width:680px;margin-bottom:50px;">
-    <p style="color:var(--gray);font-size:15.5px;">PT. Sentra Garuda Cakra Pratama (SGS) Security Service telah dipercaya untuk mengelola keamanan di berbagai bidang usaha baik swasta maupun BUMN di Indonesia.</p>
-  </div>
+  <!-- ================= MAIN ================= -->
+  <main>
 
-  <!-- Logo klien belum tersedia — menampilkan placeholder. Jangan mengarang nama perusahaan. -->
-  <div class="clients-grid">
-    <div class="client-logo" data-reveal>[DATA BELUM TERSEDIA]</div>
-    <div class="client-logo" data-reveal>[DATA BELUM TERSEDIA]</div>
-    <div class="client-logo" data-reveal>[DATA BELUM TERSEDIA]</div>
-    <div class="client-logo" data-reveal>[DATA BELUM TERSEDIA]</div>
-    <div class="client-logo" data-reveal>[DATA BELUM TERSEDIA]</div>
-  </div>
-</section>
+    <!-- HERO -->
+    <section class="page-hero client-hero">
 
-<!-- ============ BIDANG USAHA ============ -->
-<section class="industries">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <div class="eyebrow">Sektor yang Kami Layani</div>
-      <h2>Berpengalaman di Berbagai Bidang</h2>
-    </div>
-  </div>
-  <div class="industries-grid">
-    <div class="industry-tag" data-reveal>Bank</div>
-    <div class="industry-tag" data-reveal>Mining</div>
-    <div class="industry-tag" data-reveal>Hospital</div>
-    <div class="industry-tag" data-reveal>Mall</div>
-    <div class="industry-tag" data-reveal>Executive Club House</div>
-    <div class="industry-tag" data-reveal>Factory</div>
-    <div class="industry-tag" data-reveal>Construction Project</div>
-    <div class="industry-tag" data-reveal>School</div>
-    <div class="industry-tag" data-reveal>Industrial</div>
-    <div class="industry-tag" data-reveal>Warehouse</div>
-  </div>
-</section>
+      <div class="container client-hero-grid">
 
-<section class="cta-banner">
-  <div class="container">
-    <div class="eyebrow" style="justify-content:center" data-reveal>Mari Bekerja Sama</div>
-    <h2 data-reveal>Siap meningkatkan standar keamanan anda?</h2>
-    <p data-reveal>Diskusikan kebutuhan keamanan dan pelayanan operasional perusahaan Anda bersama SGS.</p>
-    <a href="kontak.html" class="btn btn-gold" data-reveal>Hubungi Kami
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    </a>
-  </div>
-</section>
+        <div>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="assets/images/logo.png" alt="Logo SGS">
-        <p>PT. Sentra Garuda Cakra Pratama<br>Jasa Keamanan dan Pelayanan Terintegrasi</p>
+          <div class="eyebrow">
+            CLIENT / TRUSTED PARTNER
+          </div>
+
+          <h1>
+            MITRA JASA<br>
+            <span>TERPERCAYA</span>
+          </h1>
+
+          <p>
+            SGS hadir sebagai partner layanan keamanan dan operasional
+            untuk berbagai sektor industri dengan pendekatan profesional,
+            disiplin, dan terukur.
+          </p>
+
+          <a
+            class="btn btn-red"
+            href="kontak.html"
+          >
+            Konsultasikan Kebutuhan
+          </a>
+
+        </div>
+
+
+        <div class="client-hero-stat">
+
+          <div class="stat-big">
+            8+
+          </div>
+
+          <div class="stat-label">
+            SEKTOR INDUSTRI
+          </div>
+
+          <div class="stat-rule"></div>
+
+          <p>
+            Solusi layanan yang dapat disesuaikan dengan karakter
+            dan kebutuhan operasional setiap lingkungan kerja.
+          </p>
+
+        </div>
+
       </div>
-      <div class="footer-col">
-        <h5>Menu</h5>
-        <a href="index.html">Beranda</a>
-        <a href="tentang-kami.html">Tentang Kami</a>
-        <a href="layanan.html">Layanan</a>
-        <a href="klien.html">Klien</a>
-        <a href="kontak.html">Hubungi Kami</a>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="section client-intro reveal">
+
+      <div class="container client-intro-grid">
+
+        <div class="section-head left">
+
+          <div class="eyebrow">
+            Our Coverage
+          </div>
+
+          <h2>
+            BERBAGAI SEKTOR,<br>
+            <span>SATU STANDAR LAYANAN</span>
+          </h2>
+
+        </div>
+
+        <div class="client-intro-copy">
+
+          <p>
+            Setiap sektor memiliki tantangan yang berbeda.
+            Karena itu SGS mengembangkan pendekatan layanan
+            yang fleksibel dengan tetap menjaga standar profesional,
+            kedisiplinan personel, pengawasan, dan kualitas operasional.
+          </p>
+
+        </div>
+
       </div>
-      <div class="footer-col">
-        <h5>Kontak</h5>
-        <a href="tel:082211227088">0822 1122 7088</a>
-        <p>Jalan Taman Cempaka No.8 Kav Merdeka<br>Bandung 40113</p>
-      </div>
+
+    </section>
+
+
+   <section class="client-sectors reveal">
+
+  <div class="container">
+
+    <div class="sector-mosaic">
+
+      <!-- 01 -->
+      <article class="sector-type-card sector-red">
+
+        <span class="sector-index">01</span>
+
+        <div class="sector-symbol">01</div>
+
+        <div class="sector-card-content">
+          <small>SECTOR</small>
+          <h3>PERBANKAN</h3>
+          <p>
+            Keamanan area, akses, dan lingkungan operasional.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- 02 -->
+      <article class="sector-type-card sector-dark">
+
+        <span class="sector-index">02</span>
+
+        <div class="sector-symbol">02</div>
+
+        <div class="sector-card-content">
+          <small>SECTOR</small>
+          <h3>MINING</h3>
+          <p>
+            Support keamanan untuk area dan aktivitas industri.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- 03 -->
+      <article class="sector-type-card sector-light">
+
+        <span class="sector-index">03</span>
+
+        <div class="sector-symbol">03</div>
+
+        <div class="sector-card-content">
+          <small>SECTOR</small>
+          <h3>HOSPITAL</h3>
+          <p>
+            Lingkungan aman dan tertib untuk fasilitas kesehatan.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- 04 -->
+      <article class="sector-type-card sector-light">
+
+        <span class="sector-index">04</span>
+
+        <div class="sector-symbol">04</div>
+
+        <div class="sector-card-content">
+          <small>SECTOR</small>
+          <h3>MALL</h3>
+          <p>
+            Pengamanan area publik dan fasilitas komersial.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- 05 -->
+      <article class="sector-type-card sector-dark">
+
+        <span class="sector-index">05</span>
+
+        <div class="sector-symbol">05</div>
+
+        <div class="sector-card-content">
+          <small>SECTOR</small>
+          <h3>FACTORY</h3>
+          <p>
+            Pengamanan lingkungan kerja dan area produksi.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- 06 -->
+      <article class="sector-type-card sector-red">
+
+        <span class="sector-index">06</span>
+
+        <div class="sector-symbol">06</div>
+
+        <div class="sector-card-content">
+          <small>SECTOR</small>
+          <h3>SCHOOL</h3>
+          <p>
+            Menjaga lingkungan pendidikan tetap aman dan tertib.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- 07 -->
+      <article class="sector-type-card sector-light">
+
+        <span class="sector-index">07</span>
+
+        <div class="sector-symbol">07</div>
+
+        <div class="sector-card-content">
+          <small>SECTOR</small>
+          <h3>INDUSTRIAL</h3>
+          <p>
+            Layanan yang disesuaikan dengan kebutuhan industri.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- 08 -->
+      <article class="sector-type-card sector-dark">
+
+        <span class="sector-index">08</span>
+
+        <div class="sector-symbol">08</div>
+
+        <div class="sector-card-content">
+          <small>SECTOR</small>
+          <h3>WAREHOUSE</h3>
+          <p>
+            Support keamanan area penyimpanan dan logistik.
+          </p>
+        </div>
+
+      </article>
+
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 PT. Sentra Garuda Cakra Pratama. Seluruh Hak Dilindungi.</span>
-    </div>
+
   </div>
-</footer>
 
-<a href="https://wa.me/6282211227088" target="_blank" rel="noopener" class="wa-float" aria-label="Hubungi via WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.08c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.12-.42-.14-.96-.32-1.66-.62-2.92-1.26-4.83-4.2-4.98-4.4-.15-.2-1.19-1.58-1.19-3.02s.75-2.14 1.02-2.44c.26-.29.57-.36.76-.36l.55.01c.17.01.42-.06.65.5.24.58.82 2.01.89 2.15.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.29.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.29.14.46.12.63-.07.17-.2.72-.84.92-1.12.19-.29.38-.24.64-.14.26.09 1.68.79 1.97.93.29.15.48.22.55.34.07.13.07.72-.17 1.41z"/></svg>
-</a>
+</section>
 
-<script src="./script.js"></script>
-</body>
-</html>
+
+    <!-- WHY SGS -->
+    <section class="section client-capability reveal">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="eyebrow">
+            Why SGS
+          </div>
+
+          <h2>
+            KENAPA MITRA MEMILIH SGS?
+          </h2>
+
+          <p>
+            Fokus kami bukan hanya menempatkan personel,
+            tetapi membangun sistem layanan yang dapat
+            dipantau dan dikembangkan.
+          </p>
+
+        </div>
+
+
+        <div class="capability-row">
+
+
+          <article>
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              PROFESIONAL
+            </h3>
+
+            <p>
+              Personel diarahkan untuk bekerja sesuai
+              standar layanan dan etika profesional.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              DISIPLIN
+            </h3>
+
+            <p>
+              Pelaksanaan kerja mengikuti SOP,
+              briefing, dan pengawasan rutin.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              TERUKUR
+            </h3>
+
+            <p>
+              Monitoring dan evaluasi membantu menjaga
+              konsistensi kualitas layanan.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              TERINTEGRASI
+            </h3>
+
+            <p>
+              Keamanan, kebersihan, dan support operasional
+              dapat dikelola bersama.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="client-quote reveal">
+
+      <div class="container">
+
+        <div class="quote-mark">
+          “
+        </div>
+
+        <p>
+          Keamanan yang baik bukan hanya tentang penjagaan,
+          tetapi tentang sistem, disiplin, dan kepercayaan.
+        </p>
+
+        <div class="gold-line"></div>
+
+        <span>
+          SGS — SENTRA GARUDA CAKRA PRATAMA
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <section class="cta">
+  <div class="container">
+    <div class="eyebrow" style="color:#fff">SGS Security &amp; Office Boy Services</div>
+    <h2>SIAP MENINGKATKAN STANDAR KEAMANAN DAN KEBERSIHAN PERUSAHAAN ANDA?</h2>
+    <p>Hubungi Marketing SGS untuk mendiskusikan kebutuhan keamanan dan kebersihan perusahaan Anda.</p>
+    <a class="btn-wa" href="https://wa.me/6282211227088" target="_blank" rel="noopener">Hubungi Marketing SGS</a><a class="btn btn-outline" href="kontak.html">Google Maps</a>
+  </div>
+</section>
+</main><footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="assets/images/logo.png" alt="Logo SGS"><strong>PT. SENTRA GARUDA CAKRA PRATAMA</strong><p>SGS Security &amp; Office Boy Services</p><p>Jalan Taman Cempaka No.8 Kav Merdeka - Bandung 40113</p></div>
+      <div><h4>Navigation</h4><a href="index.html">Beranda</a><a href="tentang.html">Tentang Kami</a><a href="layanan.html">Layanan</a><a href="tentang.html#klien">Klien</a><a href="sistem-kinerja.html">Sistem Kinerja</a><a href="kontak.html">Kontak</a></div>
+      <div><h4>Marketing</h4><a href="tel:082211227088">082211227088</a><a href="https://wa.me/6282211227088" target="_blank" rel="noopener">WhatsApp</a><p>Jalan Taman Cempaka No.8 Kav Merdeka - Bandung 40113</p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 PT. Sentra Garuda Cakra Pratama. All Rights Reserved.</span><span>SECURITY • CLEANING • OFFICE SUPPORT</span></div>
+  </div>
+</footer><a class="wa-float" href="https://wa.me/6282211227088" target="_blank" rel="noopener" aria-label="Hubungi SGS via WhatsApp">◔</a><div class="wa-label">Chat langsung dengan CS</div><script src="script.js"></script></body></html>
