@@ -927,242 +927,192 @@ h2 {
 
 .topology-wrapper {
     position: relative;
-    width: 100%;
-    max-width: 1050px;
-    height: 720px;
+    width: 1000px;
+    max-width: 100%;
+    height: 680px;
     margin: 0 auto;
+}
+
+.topology-lines-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.topo-line {
+    stroke-width: 2px;
+    stroke-dasharray: 6 4;
+}
+
+.topo-ring {
+    fill: none;
+    stroke: rgba(199, 25, 31, 0.12);
+    stroke-width: 1.5px;
+}
+
+.topo-ring-outer {
+    stroke-dasharray: 5 6;
+    stroke: rgba(5, 5, 5, 0.08);
+}
+
+.topo-dot {
+    fill: #C7191F;
+    filter: drop-shadow(0 0 5px rgba(199, 25, 31, 0.6));
 }
 
 .topology-item {
     position: absolute;
-    width: 220px;
+    width: 180px;
     text-align: center;
     z-index: 5;
+    transition: transform .35s ease;
 }
 
 .topology-logo {
     position: relative;
-    width: 180px;
-    height: 140px;
-    margin: 0 auto 15px;
+    width: 160px;
+    height: 110px;
+    margin: 0 auto 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #fff;
-    transition: transform .45s ease, box-shadow .45s ease;
+    border: 1px solid rgba(5, 5, 5, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    padding: 10px;
 }
 
 .topology-logo img {
     display: block;
-    max-width: 150px;
-    max-height: 120px;
+    max-width: 130px;
+    max-height: 85px;
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: .65;
-    transition: filter .45s ease, opacity .45s ease, transform .45s ease;
+    filter: grayscale(80%);
+    opacity: .8;
+    transition: filter .35s ease, opacity .35s ease, transform .35s ease;
 }
 
 .topology-item:hover .topology-logo {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
+    border-color: rgba(199, 25, 31, 0.4);
+    box-shadow: 0 16px 36px rgba(199, 25, 31, 0.16);
 }
 
 .topology-item:hover .topology-logo img {
     filter: grayscale(0%);
     opacity: 1;
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
-.topology-item h4,
-.topology-item strong {
+.topology-item h4 {
     display: block;
     width: 100%;
     margin: 0;
-    font-size: 12px;
-    line-height: 1.4;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 800;
     letter-spacing: .5px;
-    color: #555;
-    text-align: center;
-    transition: color .3s ease;
+    color: #111;
+    text-transform: uppercase;
+    line-height: 1.3;
 }
 
-.topology-item:hover h4,
-.topology-item:hover strong {
-    color: #111;
+.topology-item strong {
+    display: block;
+    width: 100%;
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray);
+    line-height: 1.3;
 }
 
 .topology-center {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 190px;
-    height: 190px;
+    width: 180px;
+    height: 180px;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ddd;
+    border: 3px solid var(--red);
     border-radius: 50%;
     background: #fff;
+    box-shadow: 0 14px 38px rgba(199, 25, 31, 0.22), 0 0 0 10px rgba(199, 25, 31, 0.07);
     z-index: 10;
+    transition: transform .4s ease, box-shadow .4s ease;
 }
 
-.topology-center::before {
-    content: "";
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    border: 1px solid #e21c2a;
-    border-radius: 50%;
-    transition: transform .5s ease;
-}
-
-.topology-center:hover::before {
-    transform: scale(1.08);
-}
-
-.topology-center::after {
-    display: none;
-}
-
-.topology-center-inner {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-.topology-center-inner span {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 18px;
-    font-weight: 800;
-    color: #111;
-}
-
-.topology-center-inner strong {
-    display: block;
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: .5px;
-    color: #111;
+.topology-center:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 20px 45px rgba(199, 25, 31, 0.32), 0 0 0 14px rgba(199, 25, 31, 0.12);
 }
 
 .network-center {
     position: relative;
-    width: 135px;
-    height: 135px;
+    width: 130px;
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 20;
 }
 
 .network-center img {
-    width: 110px;
+    width: 100px;
     height: auto;
-    max-width: 110px;
-    max-height: 110px;
+    max-width: 100px;
+    max-height: 100px;
     object-fit: contain;
     display: block;
-    margin: 0;
 }
 
+/* Precise item coordinates aligning exactly with SVG line endpoints */
 .topology-item-1 {
-    top: 20px;
-    left: 80px;
+    top: 55px;
+    left: 100px;
 }
 
 .topology-item-2 {
-    top: 20px;
-    right: 80px;
+    top: 55px;
+    right: 100px;
 }
 
 .topology-item-3 {
-    top: 270px;
-    left: 0;
+    top: 285px;
+    left: 30px;
 }
 
 .topology-item-4 {
-    top: 270px;
-    right: 0;
+    top: 285px;
+    right: 30px;
 }
 
 .topology-item-5 {
-    bottom: 10px;
-    left: 80px;
+    top: 515px;
+    left: 100px;
 }
 
 .topology-item-6 {
-    bottom: 10px;
-    right: 80px;
+    top: 515px;
+    right: 100px;
 }
 
-.topology-line {
-    position: absolute;
-    background: #ddd;
-    z-index: 1;
-}
-
-.line-top {
-    width: 1px;
-    height: 120px;
-    top: 140px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.line-bottom {
-    width: 1px;
-    height: 120px;
-    bottom: 130px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.line-left-top {
-    width: 250px;
-    height: 1px;
-    top: 350px;
-    left: 190px;
-}
-
-.line-right-top {
-    width: 250px;
-    height: 1px;
-    top: 350px;
-    right: 190px;
-}
-
-.line-left-bottom {
-    width: 190px;
-    height: 1px;
-    top: 475px;
-    left: 260px;
-    transform: rotate(-25deg);
-    transform-origin: left center;
-}
-
-.line-right-bottom {
-    width: 190px;
-    height: 1px;
-    top: 475px;
-    right: 260px;
-    transform: rotate(25deg);
-    transform-origin: right center;
-}
-
-.topology-line::after {
-    content: "";
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #e21c2a;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@media (max-width: 1050px) and (min-width: 768px) {
+    .topology-wrapper {
+        transform: scale(0.8);
+        transform-origin: center center;
+        margin: -40px auto;
+    }
 }
 
 
@@ -2647,7 +2597,8 @@ h2 {
         overflow: visible !important;
     }
 
-    .topology-line {
+    .topology-line,
+    .topology-lines-svg {
         display: none !important;
     }
 
@@ -2854,3 +2805,557 @@ h2 {
         font-size: 9px;
     }
 }
+
+/* =========================================================
+   IMPROVED SECTION: SOLUSI PENGAMANAN & FASILITAS TERPADU
+   ========================================================= */
+
+.solusi-section {
+    background: #0e0e0e;
+    color: #fff;
+    padding: 100px 0 85px;
+    position: relative;
+    overflow: hidden;
+}
+
+.solusi-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1320px;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(199, 25, 31, 0.18), transparent 70%);
+    pointer-events: none;
+}
+
+.solusi-section .section-head h2 {
+    color: #fff;
+}
+
+.solusi-section .section-head p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.solusi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+.solusi-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid var(--red);
+    padding: 34px 26px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    transition: all 0.35s ease;
+    position: relative;
+}
+
+.solusi-card:hover {
+    transform: translateY(-7px);
+    background: rgba(255, 255, 255, 0.08);
+    border-top-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.solusi-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.solusi-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(199, 25, 31, 0.18);
+    border: 1px solid rgba(199, 25, 31, 0.4);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff4d4d;
+}
+
+.solusi-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.solusi-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.solusi-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.solusi-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.solusi-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: auto;
+}
+
+.badge-item {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 4px 9px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.legal-strip {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(178, 138, 36, 0.35);
+    border-radius: 8px;
+    padding: 22px 28px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.legal-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legal-title svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.legal-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 16px;
+}
+
+.legal-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.legal-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--red);
+}
+
+/* =========================================================
+   COUNTER SECTION (STATISTIK KINERJA & JANGKAUAN)
+   ========================================================= */
+
+.counter-section {
+    background: #171717;
+    color: #fff;
+    padding: 90px 0;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.counter-section .section-head h2 {
+    color: #fff;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.counter-card {
+    background: #1f1f1f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 4px solid var(--red);
+    padding: 38px 24px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter-card:hover {
+    transform: translateY(-6px);
+    border-top-color: var(--gold);
+    box-shadow: 0 22px 48px rgba(199, 25, 31, 0.2);
+    background: #232323;
+}
+
+.counter-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(199, 25, 31, 0.15);
+    border: 1px solid rgba(199, 25, 31, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff4d4d;
+    margin-bottom: 16px;
+}
+
+.counter-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+}
+
+.counter-number-wrap {
+    font-size: clamp(48px, 4.2vw, 62px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    font-family: var(--font);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    letter-spacing: -0.02em;
+}
+
+.counter-val {
+    font-variant-numeric: tabular-nums;
+}
+
+.counter-suffix {
+    color: var(--gold);
+    font-size: clamp(34px, 3vw, 44px);
+    font-weight: 800;
+}
+
+.counter-title {
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #fff;
+    margin: 10px 0 8px;
+}
+
+.counter-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 260px;
+}
+
+/* =========================================================
+   TESTIMONIAL SECTION
+   ========================================================= */
+
+.testimonial-section {
+    background: #fbfbfb;
+    padding: 100px 0;
+    position: relative;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.testimonial-card {
+    background: #fff;
+    border: 1px solid rgba(5, 5, 5, 0.08);
+    border-left: 4px solid var(--red);
+    border-radius: 8px;
+    padding: 38px 34px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--gold);
+}
+
+.testimonial-quote-icon {
+    position: absolute;
+    top: 26px;
+    right: 28px;
+    color: rgba(199, 25, 31, 0.12);
+    width: 36px;
+    height: 36px;
+}
+
+.testimonial-quote-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 4px;
+    color: #eab308;
+    margin-bottom: 16px;
+}
+
+.testimonial-stars svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+}
+
+.testimonial-quote {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 24px;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-client {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(5, 5, 5, 0.07);
+}
+
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), #550a0d);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(199, 25, 31, 0.25);
+}
+
+.client-info h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--black);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.client-info .client-role {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+.client-sector {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--red);
+    background: rgba(199, 25, 31, 0.08);
+    padding: 2px 10px;
+    border-radius: 999px;
+}
+
+/* =========================================================
+   IMPROVED TENTANG KAMI: CORE VALUES & OPERATIONAL
+   ========================================================= */
+
+.core-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.core-value-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--red);
+    padding: 34px 24px;
+    border-radius: 6px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.core-value-card:hover {
+    transform: translateY(-6px);
+    border-top-color: var(--gold);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+}
+
+.core-value-card .val-num {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.core-value-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.core-value-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.op-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.op-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    background: #f7f7f7;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 3px solid var(--red);
+}
+
+.op-check {
+    color: var(--red);
+    font-weight: 800;
+    font-size: 16px;
+}
+
+/* =========================================================
+   RESPONSIVE STYLES FOR NEW/IMPROVISED SECTIONS
+   ========================================================= */
+
+@media (max-width: 1199px) {
+    .solusi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .core-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 860px) {
+    .legal-strip {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .legal-title {
+        justify-content: center;
+    }
+
+    .legal-items {
+        justify-content: center;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .op-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 580px) {
+    .solusi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .counter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .core-values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .counter-card {
+        padding: 30px 18px;
+    }
+
+    .testimonial-card {
+        padding: 26px 20px;
+    }
+
+    .legal-items {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
